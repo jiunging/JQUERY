@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+    <!-- 제이쿼리 사용 -->
+    <script src="js/Jquery.js"></script>
+
+    <style>
+      .myBtn {color: red}
+    </style>
+
+</head>
+<body>
+
+  <button id="btn" class="btn btn-default">클래스제어하기</button>
+  
+  <script>
+    // document.getElementById("btn").classList.add("myBtn");
+    // document.getElementById("btn").classList.remove("myBtn");
+
+    $("#btn").addClass("myBtn");
+    $("#btn").removeClass("myBtn");
+    console.log($("#btn").hasClass("myBtn")) // 있으면 true, 없으면 false
+
+  </script>
+
+  <button id="toggle" class="red">토글 클래스</button>
+  <script>
+    $("#toggle").click(function() {
+      // console.log(this)
+      // console.log(event.target);
+      // $(this) - 제이쿼리를 이 태그에 적용하고 싶을 때
+      // $(event.target) - 제이쿼리를 이 태그에 적용하고 싶을 때
+      // $("#toggle")- 제이쿼리를 이 태그에 적용하고 싶을 때, 그니까 위 3개가 똑같음
+      $(this).toggleClass("myBtn");
+    })
+  </script>
+
+</body>
+</html>

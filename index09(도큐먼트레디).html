@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+      <!-- 제이쿼리 사용 -->
+      <script src="js/Jquery.js"></script>
+</head>
+<body>
+
+  <script>
+    // js가 태그보다 위에 있어서,
+    // $("#btn").click(function() {
+    //   alert("버튼 누름");
+    // })
+
+    // 화면이 로드된 이후에 실행 이게 document.ready임
+    $(document).ready(function() {
+
+      $("#btn").click(function() {
+        alert("버튼 누름");
+      })
+
+    })
+
+    // ready는 여러개 사용 가능함
+    $(document).ready(function() {
+
+      $("#btn").click(function() {
+        alert("버튼 누름222222222222222");
+      })
+
+    })
+
+
+  </script>
+
+  <button id="btn">버튼</button>
+  
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <!-- 제이쿼리 사용 -->
+  <script src="js/Jquery.js"></script>
+</head>
+<body>
+
+  <h3>attr함수</h3>
+  <img src="#" alt="이미지1" class="test" id="test">
+
+  <img src="#" alt="이미지2" class="test2" width="" height="">
+
+  <script>
+    var a = document.querySelector(".test").src
+    console.log(a);
+
+    // 값은 그냥 elements에서 보면 됨
+
+    // 속성얻기
+    var b = $(".test").attr("src")
+    console.log(b);
+
+    // 매개변수 2개를 주면, 값을 바꾼다
+    $(".test").attr("src", "abcd")
+
+
+    // 매개변수에 객체를 주면, 한 번에 값을 변경 가능
+    $(".test2").attr({
+      alt : "바꿈",
+      src : "profile.png",
+      width : "200",
+      height : "200"
+    });
+
+
+    // 속성 삭제
+    $(".test2").removeAttr("height")
+
+  </script>
+  
+</body>
+</html>

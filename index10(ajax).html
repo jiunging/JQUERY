@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+        <!-- 제이쿼리 사용 -->
+        <script src="js/Jquery.js"></script>
+</head>
+<body>
+
+  <p class="title"></p>
+
+  <script>
+    $(document).ready(function() {
+      // ajax(get방식)
+    //   $.ajax({
+    //     type: "get", // 요청 형식
+    //     url: "http://localhost:8181/getData?id=홍길동&age=20", //요청주소(데이터 보냄)
+    //     success : function(data) { // 요청 성공 시 실행시킬 콜백
+    //       console.log(data)
+    //       // 여러분의 JS능력에 따라서 여기서 프로세스 처리
+    //       $(".title").html(data);
+    //     },
+    //     error : function(err, status) { // 요청 실패 시 실행시킬 콜백
+    //       console.log(err);
+    //       console.log(status);
+    //     }
+    //   })
+
+
+    // post방식
+    $.ajax({
+      type: "post", // 요청 타입
+      url: "http://localhost:8181/getJSON",
+      data: JSON.stringify({name: "홍길동", age: 20}),
+      contentType: "application/json", //내가 보내는 데이터에 대한 타입
+      // dataType: "json", // 내가 서버로부터 받는 타입(이걸로 줘~),xml, json, html, text (생략 가능)
+      success : function(data) {
+        console.log(data)
+      },
+      error : function(err, status) {
+        console.log(err)
+        console.log(status)
+        console.log("실패")
+      }
+    })
+
+
+
+
+
+    })
+
+
+
+  </script>
+  
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+    <!-- 제이쿼리 사용 -->
+    <script src="js/Jquery.js"></script>
+
+</head>
+<body>
+
+
+
+  <p class="title">제이쿼리 css사용</p>
+
+  <ul>
+    <li>box</li>
+    <li>box</li>
+    <li>box</li>
+    <li>box</li>
+    <li>box</li>
+  </ul>
+
+  <script>
+    $(".title").css("color", "red");
+
+    var a = $(".title").css("color");
+    console.log(a)
+
+    // JS로 li 5개 변경
+    var arr = document.querySelectorAll("ul > li"); //.forEach(a => a.style.backgroundColor = "red");
+    for(var i = 0; i < arr.length; i++) {
+      arr[i].style.backgroundColor = "blue";
+    }
+
+    // jquery - 제이쿼리는 단일, 다중 상관없이 한 번에 모든 선택자에 적용시킵니다.!!!!개꿀 반복문 안 돌려도 됨
+    $("ul > li").css("backgroundColor", "green");
+
+    // 여러 css를 한 번에 적용
+    $("ul > li").css({
+      backgroundColor : "blue",
+      color : "red",
+      display : "inline-block",
+      height : "200px",
+      width : "200px"
+    })
+
+    
+  </script>
+  
+</body>
+</html>

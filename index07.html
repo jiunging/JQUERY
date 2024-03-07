@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+      <!-- 제이쿼리 사용 -->
+      <script src="js/Jquery.js"></script>
+
+</head>
+<body>
+
+  <button id="box1">클릭이벤트</button>
+
+  <input type="text" id="box2">
+
+  <div style="border: 1px solid #777; width: 100px; height: 100px;" id="box3">
+    엄
+  </div>
+
+  <script>
+    // console.log($("#box1"))
+    $("#box1").click(function() {
+      alert("엄준식");
+    })
+
+    // 동일한 이벤트가 여러번 걸려도 동작합니다.
+    // $("#box1").click(function() {
+    //   alert("클릭이벤트222222")
+    // })
+
+    $("#box2").keyup(function() {
+      console.log( $(event.target).val() );
+    })
+
+    $("#box3").mouseenter(function() {
+      console.log("마우스 진입함");
+    })
+
+    $("#box3").mouseleave(function() {
+      console.log("마우스 나감")
+    })
+
+  </script>
+
+
+  
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+      <!-- 제이쿼리 사용 -->
+      <script src="js/Jquery.js"></script>
+
+</head>
+<body>
+
+  <table class="xxx">
+    <tr>
+        <th>번호</th>
+        <th>이름</th>
+        <th>버튼</th>
+        <th>테스트</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>홍길동</td>
+        <td>
+            <button type="button" class="btn">버튼</button>
+        </td>
+        <td>
+            <span><i class="test">테스트1</i></span>
+            <span >테스트2</span>
+        </td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>이순신</td>
+        <td>
+            <button type="button" class="btn">버튼</button>
+        </td>
+        <td>
+            <span><i class="test">테스트1</i></span>
+            <span >테스트2</span>
+        </td>
+    </tr>
+</table>
+
+  <script>
+    // $("선택자").closest("td")
+    // - 선택자의 최근접 단일부모 탐색 (td탐색)
+    // $("선택자").children()
+    // - 선택자의 자식요소 탐색
+    // $("선택자").first()
+    // - 선택자의 첫번째 자식요소
+    // $("선택자").find("td")
+    // - 선택자의 특정 자식요소 탐색 (td탐색)
+    // $("선택자").next()
+    // - 선택자의 다음 형제노드
+    // $("선택자").prev()
+    // - 선택자의 이전 형제노드
+
+    $(".btn").click(function() {
+      // console.log($(event.target).closest("tr")) // 나랑 가장 가까이있는 부모 tr태그
+      // console.log($(event.target).closest("xxx")) // 나랑 가장 가까이있는 부모 tr태그
+    
+      // 제이쿼리 함수를 적용했을 때, 다시 제이쿼리를 적용할 수 있는 제이쿼리 객체
+      // $(event.target).closest(".xxx").attr("id", "추가하기")// 이런 식으로
+
+      // console.log( $(event.target).closest("tr").prev() ); // tr의 이전형제
+      // console.log( $(event.target).closest("tr").next() ); // tr의 다음형제
+      // console.log( $(event.target).closest("tr").siblings() ); //tr의 형제들
+
+      // console.log( $(event.target).closest("tr").children() ); //tr의 자식들
+      // console.log( $(event.target).closest("tr").children().first() ); //tr의 자식들 중 첫째
+      // console.log( $(event.target).closest("tr").children().last() ); //tr의 자식들 중 막내
+      
+      // console.log( $(event.target).closest("tr").find(".test") ); //tr의 자식 중 test를 바로찾음
+      
+      // 버튼을 누르면, "테스트2"의 html내용을 바꾸기
+      console.log($(event.target).closest("tr").children().last().children().last().html("엄"));
+    })
+  </script>
+
+
+  
+</body>
+</html>

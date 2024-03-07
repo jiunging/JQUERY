@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+    
+  <!-- 제이쿼리 사용 -->
+  <script src="js/Jquery.js"></script>
+</head>
+<body>
+
+  <input type="text" id="apple" value="홍길동">
+
+  <input type="text" class="melon" value="홍길동">
+
+  <script>
+    // var a = document.getElementById("apple").value; // JS
+
+    // var b = $("#apple").val()
+    // console.log(a)
+    // console.log(b)
+
+    // 제이커리 함수들은 오버로딩 매개변수의 개수에 따라서 다르게 동작
+
+    console.log($("#apple")) // 제이쿼리 함수를 적용할 수 있는 객체를 반환
+    console.log($("#apple")[0]) // 인풋태그 자체를 얻을 수 있음
+    console.log($("#apple")[0].value) // JS
+    console.log($("#apple").length)
+
+    console.log("======================================")
+    var c = document.querySelector(".melon").value;
+    console.log(c);
+    console.log($(".melon").val());
+
+    $(".melon").val("엄준식"); // 값을 변경시킴
+
+    
+  </script>
+
+
+
+</body>
+</html>
